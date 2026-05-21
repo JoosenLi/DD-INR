@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dd-inr"
+version = "0.1.0"
+description = "Dynamics-Driven INR for accelerated 3D+time fMRI reconstruction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pyyaml",
+  "torch",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+recon = ["mrinufft", "tensorboardX"]
+simulation = ["snake-fmri"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["dd_inr*"]
+

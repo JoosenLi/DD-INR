@@ -1,0 +1,84 @@
+amp: false
+log_interval: 20
+hist_interval: 0
+save_interval: 20
+grad_clip: 0.0
+dynamics: true
+
+num_epoch: 1000
+batch_size: 4
+optimizer: Adam
+weight_decay: 0.0
+beta1: 0.9
+beta2: 0.999
+lr: 0.00002
+eta_min: 0.0000001
+
+nufft_backend: cufinufft
+density: true
+
+model: SIREN
+net:
+  network_input_size: 640
+  network_output_size: 2
+  network_depth: 3
+  network_width: 512
+
+encoder: SpatioTemporal_Encoder
+SpatioTemporal_Encoder:
+  spatial_embedding: randn
+  temporal_embedding: gauss
+  scale_spatial: 5
+  scale_temporal: 2
+  embedding_size_spatial: 256
+  embedding_size_temporal: 64
+  coordinates_size_spatial: 3
+  coordinates_size_temporal: 1
+  learnable_temporal: true
+
+reg:
+  auto_scale: true
+  ema_beta: 0.98
+  time_scale_to_index: true
+
+  sparse_dyn:
+    enable: false
+    norm: charb
+    p: 0.5
+    alpha: 0.005
+    warm: 100
+    ramp: 200
+
+  tv_xyz:
+    enable: false
+    type: l2grad
+    alpha: 0.01
+    warm: 100
+    ramp: 200
+
+  tvxyz_dt:
+    enable: true
+    type: tv
+    alpha: 0.002
+    warm: 100
+    ramp: 200
+
+  dt:
+    enable: false
+    norm: l2
+    alpha: 0.0005
+    warm: 100
+    ramp: 100
+
+  dtt:
+    enable: false
+    norm: charb
+    alpha: 0.001
+    warm: 100
+    ramp: 100
+    clamp: 20
+
+img_size: [240, 64, 64, 40, 2]
+output_path: outputs
+exp_idx: dd_inr_rxyzt
+
