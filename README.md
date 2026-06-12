@@ -64,12 +64,6 @@ python scripts/reconstruct_3d.py \
   --case-name MICCAI26_Simulation
 ```
 
-Outputs are written to `outputs/<case>/<run>/` by default. For large experiments, prefer a symlink:
-
-```bash
-ln -s /neurospin/mind/ql284910/HashINR_outputs outputs
-```
-
 ## Method Defaults
 
 The default configuration follows the paper implementation:
