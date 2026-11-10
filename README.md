@@ -6,7 +6,7 @@ Qiaoxin Li, Caini Pan, Pierre-Antoine Comby, Chaithya Giliyar Radhakrishna, Phil
 
 ![DD-INR method pipeline](assets/fig1_miccai.png)
 
-This repository contains the implementation for the MICCAI 2026 paper **DD-INR: Dynamics-Driven Implicit Neural Representation for Accelerated Whole-Brain functional MRI Reconstruction**. DD-INR reconstructs a dynamic fMRI series as
+This repository contains the implementation for the MICCAI 2026 paper [**DD-INR: Dynamics-Driven Implicit Neural Representation for Accelerated Whole-Brain Functional MRI Reconstruction**](https://doi.org/10.1007/978-3-032-38179-8_10). DD-INR reconstructs a dynamic fMRI series as
 
 ```text
 x(r, t) = x_bg(r) + f_theta(r, t)
@@ -82,5 +82,27 @@ Run the lightweight checks:
 python -m pytest tests
 ```
 
+## Citation
 
+If you use DD-INR in your research, please cite our paper. The BibTeX entry is also available in [CITATION.bib](CITATION.bib).
 
+```bibtex
+@inproceedings{li2027ddinr,
+  author    = {Li, Qiaoxin and Pan, Caini and Comby, Pierre-Antoine and
+               Chaithya, Giliyar Radhakrishna and Ciuciu, Philippe},
+  title     = {{DD-INR}: Dynamics-Driven Implicit Neural Representation for
+               Accelerated Whole-Brain Functional {MRI} Reconstruction},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16888},
+  pages     = {91--101},
+  year      = {2027},
+  publisher = {Springer Nature Switzerland},
+  address   = {Cham},
+  isbn      = {978-3-032-38179-8},
+  doi       = {10.1007/978-3-032-38179-8_10},
+  url       = {https://doi.org/10.1007/978-3-032-38179-8_10}
+}
+```
+
+The citation year follows Springer's published record (2027) for the MICCAI 2026 proceedings.
